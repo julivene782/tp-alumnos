@@ -1,0 +1,15 @@
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/bin/Debug/net10.0/sistema de alumnos
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/bin/Debug/net10.0/sistema de alumnos.deps.json
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/bin/Debug/net10.0/sistema de alumnos.runtimeconfig.json
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/bin/Debug/net10.0/sistema de alumnos.dll
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/bin/Debug/net10.0/sistema de alumnos.pdb
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.GeneratedMSBuildEditorConfig.editorconfig
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.AssemblyInfoInputs.cache
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.AssemblyInfo.cs
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.csproj.CoreCompileInputs.cache
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.sourcelink.json
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.dll
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/refint/sistema de alumnos.dll
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.pdb
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/sistema de alumnos.genruntimeconfig.cache
+/Users/julivenesia/Desktop/aus 2026 2do cuatri /APPIS/sistema de alumnos/sistema de alumnos/obj/Debug/net10.0/ref/sistema de alumnos.dll
