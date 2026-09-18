@@ -1,4 +1,45 @@
-﻿List<Alumno> alumnos = new List<Alumno>();
+﻿//polimorfismo et 8 
+List<Persona> personas = new List<Persona>();
+
+Alumno alumnoEjemplo = new Alumno("Ana Pérez", 12345678, 1234);
+Profesor profesorEjemplo = new Profesor("Marta Díaz", 23456789, "Programación");
+Preceptor preceptorEjemplo = new Preceptor("Carlos Gómez", 34567890, "Mañana");
+
+personas.Add(alumnoEjemplo);
+personas.Add(profesorEjemplo);
+personas.Add(preceptorEjemplo);
+
+foreach (Persona persona in personas)
+{
+    Console.WriteLine(persona.Presentarse());
+}
+
+// interfaces
+List<Materia> materias = new List<Materia>();
+
+Materia materia1 = new Materia("PROG1", "Programación I", 128);
+Materia materia2 = new Materia("MAT1", "Matemática", 96);
+
+materias.Add(materia1);
+materias.Add(materia2);
+
+List<IExportable> exportables = new List<IExportable>();
+
+exportables.Add(alumnoEjemplo);
+exportables.Add(profesorEjemplo);
+exportables.Add(materia1);
+exportables.Add(materia2);
+
+Console.WriteLine();
+Console.WriteLine("----- EXPORTACIÓN -----");
+
+foreach (IExportable exportable in exportables)
+{
+    Console.WriteLine(exportable.ExportarLinea());
+}
+
+
+List<Alumno> alumnos = new List<Alumno>();
 
 int opcion;
 
