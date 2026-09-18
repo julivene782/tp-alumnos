@@ -26,6 +26,9 @@ do
             Console.Write("Ingrese el nombre del alumno: ");
             string nombre = Console.ReadLine() ?? "";
 
+            Console.Write("Ingrese el documento: ");
+            int documento = int.Parse(Console.ReadLine());
+
             Console.Write("Ingrese el legajo: ");
             int legajo = int.Parse(Console.ReadLine());
 
@@ -35,7 +38,7 @@ do
             Console.Write("Ingrese la nota 2: ");
             decimal nota2 = decimal.Parse(Console.ReadLine());
 
-            Alumno nuevoAlumno = new Alumno(nombre, legajo);
+            Alumno nuevoAlumno = new Alumno(nombre, documento, legajo);
 
             if (nuevoAlumno.CargarNotas(nota1, nota2))
             {
