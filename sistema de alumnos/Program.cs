@@ -1,47 +1,117 @@
-﻿Alumno alumno1 = new Alumno("Juan", 1234);
-Alumno alumno2 = new Alumno("Sofia", 5678);
-Alumno alumno3 = new Alumno("Julia", 1564);
-Alumno alumno4 = new Alumno("Pilar", 8978);
+﻿List<Alumno> alumnos = new List<Alumno>();
 
-if (!alumno1.CargarNotas(8.5m, 7.5m))
+int opcion;
+
+do
 {
-    Console.WriteLine("Las notas del alumno 1 son inválidas.");
-}
+    Console.WriteLine();
+    Console.WriteLine("----- MENÚ -----");
+    Console.WriteLine("1 - Agregar alumno");
+    Console.WriteLine("2 - Listar alumnos");
+    Console.WriteLine("3 - Buscar alumno por legajo");
+    Console.WriteLine("4 - Mostrar promedio general");
+    Console.WriteLine("5 - Mostrar cantidad de alumnos aprobados");
+    Console.WriteLine("6 - Salir");
+    Console.Write("Ingrese una opción: ");
 
-if (!alumno2.CargarNotas(9m, 8m))
-{
-    Console.WriteLine("Las notas del alumno 2 son inválidas.");
-}
+    if (!int.TryParse(Console.ReadLine(), out opcion))
+    {
+        Console.WriteLine("Opción inválida.");
+        continue;
+    }
 
-if (!alumno3.CargarNotas(5.7m, 7m))
-{
-    Console.WriteLine("Las notas del alumno 3 son inválidas.");
-}
+    switch (opcion)
+    {
+        case 1:
+            Console.Write("Ingrese el nombre del alumno: ");
+            string nombre = Console.ReadLine() ?? "";
 
-if (!alumno4.CargarNotas(9m, 3m))
-{
-    Console.WriteLine("Las notas del alumno 4 son inválidas.");
-}
+            Console.Write("Ingrese el legajo: ");
+            int legajo = int.Parse(Console.ReadLine());
 
-Console.WriteLine($"Alumno 1: {alumno1.Nombre} - Legajo: {alumno1.Legajo}");
-Console.WriteLine($"Alumno 2: {alumno2.Nombre} - Legajo: {alumno2.Legajo}");
+            Console.Write("Ingrese la nota 1: ");
+            decimal nota1 = decimal.Parse(Console.ReadLine());
 
-alumno1.Nombre = "Pedro";
+            Console.Write("Ingrese la nota 2: ");
+            decimal nota2 = decimal.Parse(Console.ReadLine());
 
-Console.WriteLine($"Nuevo nombre del alumno 1: {alumno1.Nombre}");
-Console.WriteLine($"Nombre del alumno 2: {alumno2.Nombre}");
+            Alumno nuevoAlumno = new Alumno(nombre, legajo);
 
-Console.WriteLine($"Promedio de {alumno1.Nombre}: {alumno1.Promedio()}");
-Console.WriteLine($"Promedio de {alumno2.Nombre}: {alumno2.Promedio()}");
-Console.WriteLine($"Promedio de {alumno3.Nombre}: {alumno3.Promedio()}");
-Console.WriteLine($"Promedio de {alumno4.Nombre}: {alumno4.Promedio()}");
+            if (nuevoAlumno.CargarNotas(nota1, nota2))
+            {
+                alumnos.Add(nuevoAlumno);
+                Console.WriteLine("Alumno agregado correctamente.");
+            }
+            else
+            {
+                Console.WriteLine("Las notas son inválidas.");
+            }
 
-Console.WriteLine($"{alumno1.Nombre} aprobado: {alumno1.EstaAprobado()}");
-Console.WriteLine($"{alumno2.Nombre} aprobado: {alumno2.EstaAprobado()}");
-Console.WriteLine($"{alumno3.Nombre} aprobado: {alumno3.EstaAprobado()}");
-Console.WriteLine($"{alumno4.Nombre} aprobado: {alumno4.EstaAprobado()}");
+            break;
 
-Console.WriteLine(alumno1);
-Console.WriteLine(alumno2);
-Console.WriteLine(alumno3);
-Console.WriteLine(alumno4);
+        case 2:
+            if (alumnos.Count == 0)
+            {
+                Console.WriteLine("No hay alumnos cargados.");
+            }
+            else
+            {
+                foreach (Alumno alumno in alumnos)
+                {
+                    Console.WriteLine(alumno);
+                }
+            }
+
+            break;
+
+        case 3:
+            Console.Write("Ingrese el legajo que desea buscar: ");
+            int legajoBuscado = int.Parse(Console.ReadLine());
+
+            Alumno? alumnoEncontrado =
+                alumnos.FirstOrDefault(a => a.Legajo == legajoBuscado);
+
+            if (alumnoEncontrado == null)
+            {
+                Console.WriteLine("No existe un alumno con ese legajo.");
+            }
+            else
+            {
+                Console.WriteLine(alumnoEncontrado);
+            }
+
+            break;
+
+        case 4:
+            if (alumnos.Count == 0)
+            {
+                Console.WriteLine("No hay alumnos cargados.");
+            }
+            else
+            {
+                decimal promedioGeneral =
+                    alumnos.Average(a => a.Promedio());
+
+                Console.WriteLine($"Promedio general del curso: {promedioGeneral}");
+            }
+
+            break;
+
+        case 5:
+            int cantidadAprobados =
+                alumnos.Count(a => a.EstaAprobado());
+
+            Console.WriteLine($"Cantidad de alumnos aprobados: {cantidadAprobados}");
+
+            break;
+
+        case 6:
+            Console.WriteLine("Saliendo del programa...");
+            break;
+
+        default:
+            Console.WriteLine("La opción ingresada no existe.");
+            break;
+    }
+
+} while (opcion != 6);
